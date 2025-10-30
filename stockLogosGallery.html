@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Small Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .gallery {
+      display: flex;
+    
+      gap: 30px;
+      
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .gallery-item {
+      display: flex;
+      
+      justify-content: flex-start;
+      text-align: left;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .gallery img {
+      width: 100px;
+      height: auto;
+      border-radius: 4px;
+    
+    }
+
+    .gallery-text {
+      font-size: 17px;
+      color: #333;
+      font-weight: bold;
+      color: blue;
+    }  
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="gallery" id="gallery"><div class="gallery-item" style="animation-delay: 0s"><img src="https://api-ninjas-data.s3.us-west-2.amazonaws.com/logos/l11f3242118ff2add5d117cbf216f29ac578f6ba6.png" alt="Image" ><div class="gallery-text">Microsoft announces new AI features for Office 365</div>
+    </div><div class="gallery-item" style="animation-delay: 0.4s"><img src="https://api-ninjas-data.s3.us-west-2.amazonaws.com/logos/lfc4548375734de4aa0151bef377e72b1708b5072.png" alt="Image" ><div class="gallery-text">Google Cloud expands AI capabilities</div>
+    </div><div class="gallery-item" style="animation-delay: 0.8s"><img src="https://api-ninjas-data.s3.us-west-2.amazonaws.com/logos/l74c0fda1054b04bf3e2365d467e32a47e3feba7b.png" alt="Image" ><div class="gallery-text">Amazon faces antitrust scrutiny in Europe</div>
+    </div></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+</head>
+<body>
+    this is HTML
+     <!-- graphing a basic chart -->
+    <div id="stockChartContainer"></div>
+    <script src="script.js"></script>
+
+    <!-- dynamically create a form from a list of options -->
+    <h2>Select Fruits</h2>
+    <form id="fruitForm" action="/submit" method="POST">
+        <div id="checkboxContainer"></div>
+
+        <label for="date">Pick a date:</label>
+        <input type="date" id="date" name="selectedDate" required><br><br>
+
+        <!-- Number input -->
+        <label for="quantity">Enter a number:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+    const options = ['NFLX', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+
+    const container = document.getElementById('checkboxContainer');
+
+    options.forEach(fruit => {
+      const label = document.createElement('label');
+      const checkbox = document.createElement('input');
+
+      checkbox.type = 'checkbox';
+      checkbox.name = 'fruits';
+      checkbox.value = fruit;
+
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(' ' + fruit));
+      container.appendChild(label);
+      container.appendChild(document.createElement('br'));
+    });
+    // Optional: Handle form submission
+    // document.getElementById('fruitForm').addEventListener('submit', function (e) {
+    //   e.preventDefault();
+    //   const checked = Array.from(document.querySelectorAll('input[name="fruits"]:checked'))
+    //     .map(cb => cb.value);
+    //   alert('You selected: ' + checked.join(', '));
+    // });
+    </script>
+
+
+</body>
+</html>
